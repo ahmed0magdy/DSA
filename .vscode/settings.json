@@ -1,0 +1,5 @@
+{
+    "codeium.enableExplainProblem": false,
+    "codeium.enableCodeLens": false,
+    "codeium.aggressiveShutdown": true
+}
