@@ -1,4 +1,4 @@
-package linkedlistsm;
+package linkedlists;
 
 // import java.util.LinkedList;
 import java.util.NoSuchElementException;
@@ -147,13 +147,11 @@ public class linkedList {
 
     public void reversed() {
         if (head == null)
-            throw new NoSuchElementException();
-        if (head == tail)
             return;
         // [10-> 20-> 30-> 40-> 50]
         // [10 <-20 <-30 <-40 <-50]
-        Node current = head;
-        Node prev = null;
+        Node current = head; // head.next
+        Node prev = null; // head
         while (current != null) {
             Node next = current.next;
             current.next = prev;
@@ -161,6 +159,7 @@ public class linkedList {
             current = next;
         }
         tail = head;
+        tail.next = null;
         head = prev;
     }
 

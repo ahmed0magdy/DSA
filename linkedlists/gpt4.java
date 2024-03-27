@@ -1,3 +1,4 @@
+package linkedlists;
 // package linkedlistsm;
 
 // public class gpt4 {
