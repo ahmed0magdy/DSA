@@ -90,6 +90,16 @@ public class Array {
         return intersection;
     }
 
+    // we only swap elements until the middle of the array is reached
+
+    public void reverse() {
+        for (int i = 0; i < count / 2; i++) {
+            var temp = items[i];
+            items[i] = items[count - 1 - i];
+            items[count - 1 - i] = temp;
+        }
+    }
+
     // public void reversegpt4() {
     // for (int start = 0, end = count - 1; start < end; start++, end--) {
     // int temp = items[start];
@@ -98,18 +108,20 @@ public class Array {
     // }
     // }
 
-    public void reverse() {
-        int[] reversed = new int[count];
-        int n = count;
-        for (int i = 0; i < count; i++) {
-            reversed[n - 1] = items[i];
-            n--;
-        }
-        for (int i = 0; i < count; i++)
-            System.out.println(reversed[i]);
-    }
+    // public void reverse() {
+    // int[] reversed = new int[count];
+    // int n = count;
+    // for (int i = 0; i < count; i++) {
+    // reversed[n - 1] = items[i];
+    // n--;
+    // }
+    // for (int i = 0; i < count; i++)
+    // System.out.println(reversed[i]);
+    // }
 
     public void insertAt(int item, int index) {
+        // 0 1 2 3 4 5 6
+        // [10, 20 ,30 ,40 ,50, 60]
         // Check if the index is out of bounds
         if (index < 0 || index > count)
             throw new IllegalArgumentException("Index out of bounds");
