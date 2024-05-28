@@ -1,7 +1,7 @@
 
 public class MinStack {
-    private ArrayStack items = new ArrayStack();
-    private ArrayStack minStack = new ArrayStack();
+    private ArrayStack items = new ArrayStack(5);
+    private ArrayStack minStack = new ArrayStack(5);
 
     public void push(int item) {
         items.push(item);

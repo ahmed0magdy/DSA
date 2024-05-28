@@ -12,13 +12,13 @@ public class Main {
         // var result = exp.isBalanced(str);
         // System.out.println(result);
 
-        // ArrayStack stack = new ArrayStack();
-        // stack.push(1);
-        // stack.push(2);
-        // stack.push(32);
-        // stack.pop();
-        // stack.peek();
+        ArrayStack stack = new ArrayStack(5);
+        stack.push(1);
+        stack.push(2);
+        stack.push(32);
+        stack.pop();
         // System.out.println(stack.peek());
+        System.out.println(stack);
 
         // LinkedListStack stack = new LinkedListStack();
         // stack.push(1);
