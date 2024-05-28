@@ -1,8 +1,12 @@
 import java.util.Arrays;
 
 public class ArrayStack {
-    private int[] items = new int[5];
+    private int[] items;
     private int count;
+
+    ArrayStack(int n) {
+        items = new int[n];
+    }
 
     public void push(int item) {
         if (items.length == count)
@@ -28,89 +32,90 @@ public class ArrayStack {
 
     @Override
     public String toString() {
-        var contents = Arrays.copyOfRange(items, 0, count);
-        return Arrays.toString(contents);
+        // var contents = Arrays.copyOfRange(items, 0, count);
+        return Arrays.toString(items);
     }
 }
 
 // public class ArrayStack {
 
-//     private int[] stackArray; // The array to hold the stack elements
+// private int[] stackArray; // The array to hold the stack elements
 
-//     private int top; // Index of the top element in the stack
+// private int top; // Index of the top element in the stack
 
-//     private final int MAX_SIZE = 100; // Maximum size for our stack
+// private final int MAX_SIZE = 100; // Maximum size for our stack
 
-//     public ArrayStack() {
+// public ArrayStack() {
 
-//         this.stackArray = new int[MAX_SIZE]; // Initialize array with a fixed capacity
+// this.stackArray = new int[MAX_SIZE]; // Initialize array with a fixed
+// capacity
 
-//         this.top = -1; // The stack is initially empty, so top is set to -1
+// this.top = -1; // The stack is initially empty, so top is set to -1
 
-//     }
+// }
 
-//     /**
-//      * 
-//      * Push an element onto the stack.
-//      * 
-//      */
+// /**
+// *
+// * Push an element onto the stack.
+// *
+// */
 
-//     public void push(int value) {
+// public void push(int value) {
 
-//         if (isFull()) {
+// if (isFull()) {
 
-//             System.out.println("Stack Overflow");
+// System.out.println("Stack Overflow");
 
-//             return;
+// return;
 
-//         }
+// }
 
-//         stackArray[++top] = value; // Increment top and add element to the array
+// stackArray[++top] = value; // Increment top and add element to the array
 
-//     }
+// }
 
-//     /**
-//      * 
-//      * Pop an element from the stack if it's not empty.
-//      * 
-//      */
+// /**
+// *
+// * Pop an element from the stack if it's not empty.
+// *
+// */
 
-//     public int pop() {
+// public int pop() {
 
-//         if (isEmpty()) {
+// if (isEmpty()) {
 
-//             System.out.println("Stack Underflow");
+// System.out.println("Stack Underflow");
 
-//             return -1; // Returning invalid value, could also throw IllegalStateException
+// return -1; // Returning invalid value, could also throw IllegalStateException
 
-//         }
+// }
 
-//         return stackArray[top--]; // Decrement top and return the element
+// return stackArray[top--]; // Decrement top and return the element
 
-//     }
+// }
 
-//     /**
-//      * 
-//      * Check if the stack is empty.
-//      * 
-//      */
+// /**
+// *
+// * Check if the stack is empty.
+// *
+// */
 
-//     public boolean isEmpty() {
+// public boolean isEmpty() {
 
-//         return (top == -1);
+// return (top == -1);
 
-//     }
+// }
 
-//     /**
-//      * 
-//      * Check if the stack is full.
-//      * 
-//      */
+// /**
+// *
+// * Check if the stack is full.
+// *
+// */
 
-//     private boolean isFull() {
+// private boolean isFull() {
 
-//         return top == MAX_SIZE - 1;
+// return top == MAX_SIZE - 1;
 
-//     }
+// }
 
 // }
