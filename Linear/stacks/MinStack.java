@@ -1,3 +1,4 @@
+package Linear.stacks;
 
 public class MinStack {
     private ArrayStack items = new ArrayStack(5);

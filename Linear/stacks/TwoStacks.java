@@ -1,3 +1,5 @@
+package Linear.stacks;
+
 import java.util.Arrays;
 
 public class TwoStacks { // space efficient

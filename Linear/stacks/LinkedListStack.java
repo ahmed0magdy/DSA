@@ -1,3 +1,5 @@
+package Linear.stacks;
+
 public class LinkedListStack {
     private Node top;
     private int size;

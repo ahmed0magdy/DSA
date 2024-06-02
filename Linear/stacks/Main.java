@@ -1,3 +1,4 @@
+package Linear.stacks;
 // import linkedlists.linkedList;
 
 public class Main {
