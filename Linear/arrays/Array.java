@@ -1,4 +1,4 @@
-package arrays;
+package Linear.arrays;
 
 public class Array {
     private int[] items;

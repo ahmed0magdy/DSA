@@ -1,4 +1,4 @@
-package linkedlists;
+package Linear.linkedlists;
 // package linkedlistsm;
 
 // public class gpt4 {
