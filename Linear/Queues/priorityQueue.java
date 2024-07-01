@@ -9,7 +9,7 @@ public class priorityQueue {
     private int[] items;
     private int count;
 
-    priorityQueue(int capacity) {
+    public priorityQueue(int capacity) {
         items = new int[capacity];
     }
 
@@ -37,7 +37,6 @@ public class priorityQueue {
                 break;
             }
         }
-
         return i + 1;
     }
 
