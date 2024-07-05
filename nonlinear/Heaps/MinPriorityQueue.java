@@ -1,8 +1,8 @@
-package nonlinear.heaps;
+package nonlinear.Heaps;
 
 public class MinPriorityQueue {
 
-    private MinHeap minHeap;
+    private final MinHeap minHeap;
 
     public MinPriorityQueue(int capacity) {
         minHeap = new MinHeap(capacity);

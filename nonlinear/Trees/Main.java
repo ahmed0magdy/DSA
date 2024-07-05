@@ -1,6 +1,7 @@
-package nonlinear.trees;
+package nonlinear.Trees;
 
 public class Main {
+
     public static void main(String[] args) {
         Tree tree = new Tree();
         tree.insert(7);
@@ -45,15 +46,11 @@ public class Main {
     // if (n == 0)
     // return 1;
     // return n * factorial(n - 1);
-
     // }
-
     // public static int factorial(int n) { // 4! = 4 * 3*2*1 //3! = 3*2*1
     // var factorial = 1;
-
     // for (int i = n; i > 1; i--)
     // factorial *= i;
     // return factorial;
-
     // }
 }

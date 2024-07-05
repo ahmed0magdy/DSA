@@ -1,9 +1,11 @@
-package nonlinear.trees;
+package nonlinear.Trees;
 
 import java.util.ArrayList;
 
 public class Tree {
+
     private class Node {
+
         private final int value;
         private Node leftChild;
         private Node rightChild;
@@ -48,12 +50,13 @@ public class Tree {
     public boolean find(int value) {
         var current = root;
         while (current != null) {
-            if (value < current.value)
-                current = current.leftChild;
-            else if (value > current.value)
-                current = current.rightChild;
-            else
+            if (value < current.value) {
+                current = current.leftChild; 
+            }else if (value > current.value) {
+                current = current.rightChild; 
+            }else {
                 return true;
+            }
 
         }
         return false;
@@ -64,8 +67,9 @@ public class Tree {
     }
 
     private void traversePreOrder(Node root) {
-        if (root == null)
+        if (root == null) {
             return;
+        }
         System.out.println(root.value);
         traversePreOrder(root.leftChild);
         traversePreOrder(root.rightChild);
@@ -76,8 +80,9 @@ public class Tree {
     }
 
     private void traverseInOrder(Node root) {
-        if (root == null)
+        if (root == null) {
             return;
+        }
         traverseInOrder(root.leftChild);
         System.out.println(root.value);
         traverseInOrder(root.rightChild);
@@ -88,8 +93,9 @@ public class Tree {
     }
 
     private void traversePostOrder(Node root) {
-        if (root == null)
+        if (root == null) {
             return;
+        }
         traversePostOrder(root.leftChild);
         traversePostOrder(root.rightChild);
         System.out.println(root.value);
@@ -100,10 +106,12 @@ public class Tree {
     }
 
     private int height(Node root) { // post order traversal
-        if (root == null)
+        if (root == null) {
             return -1;
-        if (IsLeaf(root))
+        }
+        if (IsLeaf(root)) {
             return 0;
+        }
         return 1 + Math.max(height(root.leftChild), height(root.rightChild));
     }
 
@@ -117,8 +125,9 @@ public class Tree {
 
     // O(n)
     private int min(Node root) { // post order traversal // binary tree not BST
-        if (IsLeaf(root))
+        if (IsLeaf(root)) {
             return root.value;
+        }
         var left = min(root.leftChild);
         var right = min(root.rightChild);
 
@@ -127,8 +136,9 @@ public class Tree {
 
     // O(logn)
     public int minBST() {
-        if (root == null)
+        if (root == null) {
             throw new IllegalStateException();
+        }
         var current = root;
         var last = current; // pointer
         while (current != null) {
@@ -139,18 +149,21 @@ public class Tree {
     }
 
     public boolean equals(Tree other) {
-        if (other == null)
+        if (other == null) {
             return false;
+        }
         return equals(root, other.root);
     }
 
     private boolean equals(Node root, Node secondRoot) { // preorder traversal
-        if (root == null && secondRoot == null)
+        if (root == null && secondRoot == null) {
             return true;
+        }
 
-        if (root != null && secondRoot != null)
+        if (root != null && secondRoot != null) {
             return root.value == secondRoot.value && equals(root.leftChild, secondRoot.leftChild)
                     && equals(root.rightChild, secondRoot.rightChild);
+        }
 
         return false;
     }
@@ -160,10 +173,12 @@ public class Tree {
     }
 
     private boolean isBst(Node root, int min, int max) {// preorder traversal
-        if (root == null)
+        if (root == null) {
             return true;
-        if (root.value < min || root.value > max)
+        }
+        if (root.value < min || root.value > max) {
             return false;
+        }
 
         return isBst(root.leftChild, min, root.value - 1) && isBst(root.rightChild, root.value + 1, max);
     }
@@ -179,8 +194,9 @@ public class Tree {
     }
 
     private void printNodesAtDistance(Node root, int distance) {
-        if (root == null)
+        if (root == null) {
             return;
+        }
         if (distance == 0) {
             System.out.println(root.value);
             return;
@@ -198,8 +214,9 @@ public class Tree {
     }
 
     private void getNodesAtDistance(Node root, int distance, ArrayList<Integer> list) {
-        if (root == null)
+        if (root == null) {
             return;
+        }
         if (distance == 0) {
             list.add(root.value);
             return;
@@ -220,8 +237,9 @@ public class Tree {
     }
 
     private int size(Node node) { // number of nodes
-        if (node == null)
+        if (node == null) {
             return 0;
+        }
         return 1 + size(node.leftChild) + size(node.rightChild);
     }
 
@@ -230,10 +248,12 @@ public class Tree {
     }
 
     private int countLeaves(Node root) {
-        if (root == null)
+        if (root == null) {
             return 0;
-        if (IsLeaf(root))
+        }
+        if (IsLeaf(root)) {
             return 1;
+        }
         return countLeaves(root.leftChild) + countLeaves(root.rightChild);
     }
 
@@ -242,10 +262,12 @@ public class Tree {
     }
 
     private int max(Node root) {
-        if (root == null)
+        if (root == null) {
             throw new IllegalStateException();
-        if (root.rightChild == null)
+        }
+        if (root.rightChild == null) {
             return root.value;
+        }
         return max(root.rightChild);
     }
 
@@ -254,11 +276,13 @@ public class Tree {
     }
 
     private boolean contains(Node root, int value) {
-        if (root == null)
+        if (root == null) {
             return false;
+        }
 
-        if (root.value == value)
+        if (root.value == value) {
             return true;
+        }
 
         return contains(root.leftChild, value) || contains(root.rightChild, value);
     }
@@ -268,8 +292,9 @@ public class Tree {
     }
 
     private boolean areSibling(Node root, int first, int second) {
-        if (root == null)
+        if (root == null) {
             return false;
+        }
 
         var siblings = false;
         if (root.leftChild != null && root.rightChild != null) {
@@ -287,10 +312,12 @@ public class Tree {
     }
 
     private boolean getAncestors(Node root, int value, ArrayList<Integer> list) {
-        if (root == null)
+        if (root == null) {
             return false;
-        if (root.value == value)
+        }
+        if (root.value == value) {
             return true;
+        }
 
         if (getAncestors(root.leftChild, value, list) || getAncestors(root.rightChild, value, list)) {
             list.add(root.value);
@@ -305,8 +332,9 @@ public class Tree {
     }
 
     private boolean isBalanced(Node root) { // like idea of balance method in AVLTree
-        if (root == null)
+        if (root == null) {
             return true;
+        }
 
         var balanceFactor = height(root.leftChild) - height(root.rightChild);
         return Math.abs(balanceFactor) <= 1 && isBalanced(root.leftChild) && isBalanced(root.rightChild);

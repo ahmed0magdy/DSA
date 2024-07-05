@@ -1,4 +1,4 @@
-package nonlinear.heaps;
+package nonlinear.Heaps;
 
 public class MinHeap {
 
