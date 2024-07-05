@@ -1,6 +1,7 @@
-package nonlinear.heaps;
+package nonlinear.Heaps;
 
 public class priorityQueueWithHeap {
+
     private heap heap = new heap(10);
 
     public void enqueue(int item) {
