@@ -51,10 +51,10 @@ public class Tree {
         var current = root;
         while (current != null) {
             if (value < current.value) {
-                current = current.leftChild; 
-            }else if (value > current.value) {
-                current = current.rightChild; 
-            }else {
+                current = current.leftChild;
+            } else if (value > current.value) {
+                current = current.rightChild;
+            } else {
                 return true;
             }
 
@@ -231,6 +231,13 @@ public class Tree {
             System.out.println(getNodesAtDistance(i));
         }
     }
+
+    // public void traverseLevelOrder() { //his solution
+    // for (var i = 0; i <= height(); i++) {
+    // for (var value : getNodesAtDistance(i))
+    // System.out.println(value);
+    // }
+    // }
 
     public int size() {
         return size(root);
