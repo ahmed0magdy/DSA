@@ -131,7 +131,7 @@ public class Graph {
         }
     }
 
-    public List<String> topologicalSort() {
+    public List<String> topologicalSort() { // depthFirst with recursion and using stack
         Set<Node> visited = new HashSet<>();
         Stack<Node> stack = new Stack<>();
 
@@ -156,7 +156,7 @@ public class Graph {
         stack.push(node);
     }
 
-    public boolean hasCycle() {
+    public boolean hasCycle() { // 3 sets
         Set<Node> all = new HashSet<>();
         Set<Node> visiting = new HashSet<>();
         Set<Node> visited = new HashSet<>();
