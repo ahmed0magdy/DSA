@@ -112,7 +112,7 @@ public class Tree {
         if (IsLeaf(root)) {
             return 0;
         }
-        return 1 + Math.max(height(root.leftChild), height(root.rightChild));
+        return 1 + Math.max(height(root.leftChild), height(root.rightChild)); // divide and conquer algorithm
     }
 
     private boolean IsLeaf(Node root) { // can i remove root parameter? bec it works!!
