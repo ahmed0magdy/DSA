@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class StringReverser {
 
-    public String reverse(String input) {
+    public String reverse(String input) { // there is one in string manipulation lesson
         if (input == null)
             throw new IllegalArgumentException();
         Stack<Character> stack = new Stack<>();
