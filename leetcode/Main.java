@@ -30,7 +30,7 @@ class MinStack {
 
     public void push(int val) {
         stack1.push(val);
-        if (stack2.isEmpty() || stack1.peek() <= stack2.peek())
+        if (stack2.isEmpty() || val <= stack2.peek())
             stack2.push(val);
     }
 
