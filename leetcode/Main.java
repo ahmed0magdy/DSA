@@ -1,7 +1,5 @@
 package leetcode;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Stack;
 
 public class Main {
@@ -10,6 +8,11 @@ public class Main {
         obj.push(-2);
         obj.push(0);
         obj.push(-3);
+        obj.push(4);
+        obj.push(3);
+        obj.push(2);
+        obj.push(5);
+
         obj.pop();
         int param_3 = obj.top();
         int param_4 = obj.getMin();
@@ -20,41 +23,53 @@ public class Main {
 
 class MinStack {
 
-    Stack<Integer> stack1;
-    Stack<Integer> stack2;
+    Stack<Long> stack;
+    long min;
 
     public MinStack() {
-        stack1 = new Stack<>();
-        stack2 = new Stack<>();
+        stack = new Stack<>();
     }
 
     public void push(int val) {
-        stack1.push(val);
-        if (stack2.isEmpty() || val <= stack2.peek())
-            stack2.push(val);
+        if (stack.isEmpty()) {
+            stack.push(0l);
+            min = val;
+        } else {
+            stack.push(val - min);
+            if (val < min)
+                min = val;
+        }
     }
 
     public void pop() {
-        if (stack1.isEmpty())
+        if (stack.isEmpty())
             return;
-        int top = stack1.pop();
-        if (top == stack2.peek())
-            stack2.pop();
-
+        long pop = stack.pop();
+        if (pop < 0)
+            min -= pop;
     }
 
     public int top() {
-        return stack1.peek();
+        long top = stack.peek();
+        if (top > 0)
+            return (int) (top + min);
+        else
+            return (int) min;
+
     }
 
     public int getMin() {
-        return stack2.peek();
+        return (int) min;
     }
 }
 
 /**
  * Your MinStack object will be instantiated and called as such:
  * MinStack obj = new MinStack();
+ * long val =4;
+ * long val =3;
+ * long val =2;
+ * long val =5;
  * obj.push(val);
  * obj.pop();
  * int param_3 = obj.top();
